@@ -1,3 +1,4 @@
+// 第一节
 const div = (
     createElement('div',
         createElement('p',
@@ -28,6 +29,7 @@ function createElement(tagName, children) {
 }
 
 
+// 第二节
 import React from 'react'
 import ReactDOM from 'react-dom'
 
