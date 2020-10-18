@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.judge {
+    margin: 0 8px;
+    line-height: 5px;
+}
+
+.animals {
+    display: flex;
+    align-items: baseline;
+}
+
+.track {
+    border-bottom: 1px solid black;
+}

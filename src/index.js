@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Chessboard } from './chessboard'
-import { Add } from './add'
+import {Chessboard} from './chessboard'
+import {Add} from './add'
+import {Race} from './race'
 
 ReactDOM.render(
-    <div>
-        <Chessboard />
-        <Add />
-    </div>,
-    document.getElementById('root')
+  <div>
+    <Chessboard/>
+    <Add/>
+    <Race/>
+  </div>,
+  document.getElementById('root')
 )
