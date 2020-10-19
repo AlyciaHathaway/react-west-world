@@ -67,9 +67,9 @@ const Chessboard = function() {
         <div>
             <div>第{n}次点击</div>
             {cells.map((items, row) => (
-                <div className="row">
+                <div className="row" key={row}>
                     {items.map((item, col) => (
-                        <div className="col">
+                        <div className="col" key={col}>
                             <Cell
                                 text={item}
                                 onClick={() => onClickCell(row, col)}
