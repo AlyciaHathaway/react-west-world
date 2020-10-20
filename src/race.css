@@ -30,3 +30,8 @@ body {
 .player {
     transition: all 1s linear;
 }
+
+.playground {
+    border: 1px solid black;
+    background: greenyellow;
+}

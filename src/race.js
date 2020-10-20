@@ -11,18 +11,21 @@ class Race extends React.Component {
     }
     this.initTimer = new Date()
   }
+
   success1() {
     console.log('兔子跑完了')
     this.setState({
       result1: new Date() - this.initTimer
     })
   }
+
   success2() {
     console.log('乌龟跑完了')
     this.setState({
       result2: new Date() - this.initTimer
     })
   }
+
   render() {
     return (
       <>
@@ -31,8 +34,7 @@ class Race extends React.Component {
           <Judge/>
           <Tortoise result={this.state.result2}/>
         </div>
-        <Track1 success={this.success1.bind(this)}/>
-        <Track2 success={this.success2.bind(this)}/>
+        <Playground success1={this.success1.bind(this)} success2={this.success2.bind(this)}/>
       </>
     )
   }
@@ -60,6 +62,17 @@ function Tortoise(props) {
 function Judge() {
   return (
     <div className="judge">裁判</div>
+  )
+}
+
+function Playground(props) {
+  let {success1} = props
+  let {success2} = props
+  return (
+    <div className="playground">
+      <Track1 success={success1}/>
+      <Track2 success={success2}/>
+    </div>
   )
 }
 
