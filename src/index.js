@@ -5,55 +5,32 @@ import {Add} from './add'
 import {Race} from './race'
 import ReduxDemo from './redux'
 import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 
 const stateChanger = (state, action) => {
   if (typeof state === 'undefined') {
-    return 0
+    return {n: 0}
   } else {
     if (action.type === 'add') {
-      return state + action.payload
+      return {n: state.n + action.payload}
     } else {
-      return state
+      return {n: state.n}
     }
   }
 }
 
 const store = createStore(stateChanger)
-render()
-store.subscribe(() => {
-  render()
-})
 
-function onAddOdd() {
-  if (store.getState() % 2 === 1) {
-    store.dispatch({type: 'add', payload: 1})
-  }
-}
-
-function onAddAsync() {
-  setTimeout(() => {
-    store.dispatch({type: 'add', payload: 1})
-  }, 2000)
-}
-
-function render() {
-  ReactDOM.render(
+ReactDOM.render(
+  <Provider store={store}>
     <div>
       <Chessboard/>
       <Add/>
       <Race/>
-      <ReduxDemo value={store.getState()}
-                 onAdd1={() => {
-                   store.dispatch({type: 'add', payload: 1})
-                 }}
-                 onAdd2={() => {
-                   store.dispatch({type: 'add', payload: 2})
-                 }}
-                 onAddOdd={onAddOdd}
-                 onAddAsync={onAddAsync}/>
-    </div>,
-    document.getElementById('root')
-  )
-}
+      <ReduxDemo/>
+    </div>
+  </Provider>,
+  document.getElementById('root')
+)
 
 
