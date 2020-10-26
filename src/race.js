@@ -44,7 +44,8 @@ class Race extends React.Component {
 function Rabbit(props) {
   return (
     <div className="animals">
-      <div>🐰用时</div>
+      <span role="img" aria-label="兔子">🐰</span>
+      用时
       <div>{props.result}</div>
     </div>
   )
@@ -53,7 +54,8 @@ function Rabbit(props) {
 function Tortoise(props) {
   return (
     <div className="animals">
-      <div>🐢用时</div>
+      <span role="img" aria-label="乌龟">🐢</span>
+      用时
       <div>{props.result}</div>
     </div>
   )
@@ -102,7 +104,9 @@ class Track1 extends React.Component {
   render() {
     return (
       <>
-        <div className="player" style={this.state.style}>🐰</div>
+        <div className="player" style={this.state.style}>
+          <span role="img" aria-label="兔子">🐰</span>
+        </div>
         <div className="track"/>
       </>
     )
@@ -135,7 +139,9 @@ class Track2 extends React.Component {
   render() {
     return (
       <>
-        <div className="player" style={this.state.style}>🐢</div>
+        <div className="player" style={this.state.style}>
+          <span role="img" aria-label="乌龟">🐢</span>
+        </div>
         <div className="track"/>
       </>
     )
